@@ -3,7 +3,7 @@ layout: layouts/post.liquid
 author: cat_a_flame
 date: Created
 pageTitle: 'Link: The forgotten accessibility'
-teaser: "One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too."
+lead: "One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too."
 badcode: '
 a {
 color: red;
@@ -15,7 +15,7 @@ goodcode: '
 
 <div class="article-section">
 
-{{ teaser }}
+{{ lead }}
 
 
 ## Bad code
