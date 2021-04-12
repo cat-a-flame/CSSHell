@@ -3,16 +3,15 @@
     <head>
         <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
         <title>CSS Hell - To Hell with bad CSS!</title>
     </head>
-
     <body>
         <header class="site-header">
-            <nav>
+            <nav aria-label="Main Menu">
                 <ul class="site-navigation">
-                    <li><a href="#">About</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="https://github.com/Stefanye/CSSHell" target="_blank">Github</a></li>
                 </ul>
             </nav>
@@ -33,40 +32,38 @@
                 <p class="site-header--details">Collection of common CSS mistakes, and how to fix them</p>
             </div>
         </header>
-
-
         <main>
             
 
 <ol class="post-list" reversed>
     
   <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/p-hover/">p:hover</a></h2>
-
-    
-
-    <pre class="pre-block-preview"><code class="code-block-preview"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-heading<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#collapse0<span class="token punctuation">"</span></span><span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag">  <span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">&gt;</span></span> Industries Served <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></span></code></pre>
-
-    <div class="align-center">
-      <a class="read-more" href="/posts/p-hover/">Check out what is going on here →</a>
-    </div>
-  </li>
-  
-  <li class="post-list--entry">
     <h2 class="post-title"><a href="/posts/blog-post-2/">This is my Title 2.</a></h2>
 
     
 
-    <pre class="pre-block-preview"><code class="code-block-preview"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>panel-heading<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#collapse0<span class="token punctuation">"</span></span><span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag">  <span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">&gt;</span></span> Industries Served <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+    <pre class="language-html"><code class="language-html"></code></pre>
 
-    <div class="align-center">
-      <a class="read-more" href="/posts/blog-post-2/">Check out what is going on here →</a>
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/blog-post-2/">Check out what is going on here <span>⇸</span></a>
+    </div>
+  </li>
+  
+  <li class="post-list--entry">
+    <h2 class="post-title"><a href="/posts/blog-post/">This is my Title 1.</a></h2>
+
+    
+
+    <pre class="language-html"><code class="language-html"></code></pre>
+
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/blog-post/">Check out what is going on here <span>⇸</span></a>
     </div>
   </li>
   
 </ol>
 
-<nav class="site-bottom-navigation" aria-label="Select page">
+<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
   <ul class="site-pagination">
     
       <li class="site-pagination--item">
@@ -82,27 +79,16 @@
       </li>
     
       <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/1/" aria-current="page">
+        <a class="site-pagination--link" href="/1/" aria-current="true" tabindex="-1">
           2
         </a>
       </li>
     
-      <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/2/" >
-          3
-        </a>
-      </li>
-    
 
-    
-      <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/2/">Next »</a>
-      </li>
     
   </ul>
 </nav>
         </main>
-
         <footer>
             <p>Made with love by <a href="https://twitter.com/cat_a_flame" target="_blank">@cat_a_flame</a> - csshell.dev &copy; 2021</p>
             <p>In association with <a href="https://www.htmhell.dev/" target="_blank">HTMLHell</a> 🔥</p>

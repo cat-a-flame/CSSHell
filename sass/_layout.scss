@@ -1,0 +1,105 @@
+.site-header {
+    max-width: var(--layout-max-width);
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    & nav {
+        padding: {
+            top: 1rem;
+            bottom: 1rem;
+        }
+        & a {
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+}
+
+.site-navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    & li:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+}
+
+main {
+    border-top: .0625rem solid #999;
+    margin: {
+        top: .4rem;
+        right: auto;
+        left: auto;
+    }
+    padding-top: 3rem;
+    max-width: var(--layout-max-width);
+}
+
+footer {
+    font-size: .8rem;
+    margin: {
+        top: 4rem;
+        right: auto;
+        bottom: 1rem;
+        left: auto;
+    }
+    max-width: var(--layout-max-width);
+}
+
+/* Logo & subtitle */
+.site-header {
+    &--heading {
+        border-bottom: .0625rem solid #999;
+        padding: {
+            top: 2rem;
+            bottom: 2rem;
+        }
+    }
+    &--home-link {
+        display: inline-block;
+    }
+    &--logo {
+        width: 21.875rem;
+        @media screen and (max-width: 800px) {
+            width: 15.625rem;
+        }
+        &-path {
+            fill: url('#site-header--logo-gradient');
+        }
+        & stop {
+            transition: .2s;
+            .site-header--home-link:hover &,
+            .site-header--home-link:focus & {
+                &:first-child {
+                    stop-color: #da1f05;
+                }
+                &:last-child {
+                    stop-color: #fe650d;
+                }
+            }
+        }
+    }    
+    &--details {
+        color: #444;
+        font: {
+            family: var(--heading-font-family);
+            size: 1.4rem;
+        }
+        margin: {
+            top: 0;
+            bottom: 0;
+            left: 12rem;
+        }
+        @media screen and (max-width: 800px) {
+            font-size: 1.2rem;
+            margin: {
+                top: .5rem;
+                left: 4rem;
+            }
+        }
+    }
+}
+

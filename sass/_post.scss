@@ -1,0 +1,67 @@
+.post-meta {
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-section {
+    margin-bottom: 3rem;
+}
+
+.list-section ul {
+    margin: 0;
+   & li {
+        padding-left: .4rem;
+        &:not(:last-child) {
+            margin-bottom: .2rem;
+        }
+        &::marker {
+            color: var(--brand-color);
+            content: "⛧";
+            font: {
+                size: 1.2rem;
+                weight: 700;
+            }
+        }
+    }
+}
+
+pre[class*="language-"] {
+    background-color: #f9f9f9;
+    border: .0625rem dashed #000;
+    overflow: auto;
+    padding: 1rem;
+}
+
+code {
+    &[class*="language-"] {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        color: #ea6155;
+    }
+    &:not([class*="language-"]) {
+        background-color: #000;
+        color: #fff;
+        display: inline-block;
+        font-weight: 600;
+        line-height: 1;
+        padding: {
+            top: .2rem;
+            right: .3rem;
+            bottom: .1rem;
+            left: .3rem;
+        }
+    }
+}
+
+kbd {
+    background-color: #555;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1;
+    padding: {
+        top: .2rem;
+        right: .3rem;
+        bottom: .1rem;
+        left: .3rem;
+    }
+}

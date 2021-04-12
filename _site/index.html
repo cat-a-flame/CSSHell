@@ -2,17 +2,50 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <title>CSS Hell - To Hell with bad CSS!</title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <meta name="description" content="Collection of common CSS mistakes, and how to fix them">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@cat_a_flame">
+        <meta name="twitter:creator" content="@cat_a_flame">
+        <meta name="twitter:title" content="CSS Hell - To Hell with bad CSS!">
+        <meta name="twitter:description" content="Collection of common CSS mistakes, and how to fix them">
+        <meta name="twitter:image" content="/images/csshell_logo.png">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="CSS Hell - To Hell with bad CSS!">
+        <meta property="og:description" content="Collection of common CSS mistakes, and how to fix them">
+        <meta property="og:image" content="/images/csshell_logo.png">
+        <meta property="og:url" content="https://csshell.dev">
+        <meta property="og:site_name" content="CSS Hell">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:type" content="website">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYDLBW2NY7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-VYDLBW2NY7');
+        </script>
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
-        <title>CSS Hell - To Hell with bad CSS!</title>
     </head>
     <body>
         <header class="site-header">
-            <nav>
+            <nav aria-label="Main Menu">
                 <ul class="site-navigation">
                     <li><a href="/about">About</a></li>
-                    <li><a href="https://github.com/Stefanye/CSSHell" target="_blank">Github</a></li>
+                    <li><a href="https://github.com/Stefanye/CSSHell" target="_blank">GitHub</a></li>
                 </ul>
             </nav>
 
@@ -44,10 +77,10 @@
       <p>One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too.</p>
     
 
-    <pre class="language-html"><code class="language-html">a {<br>   color: red;<br> }</code></pre>
+    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.class</span> <span class="token punctuation">{</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">#myID</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 
-    <div class="align-center">
-      <a class="read-more" href="/posts/link-hell/">Check out what is going on here →</a>
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/link-hell/">Check out what is going on here <span>⇸</span></a>
     </div>
   </li>
   
@@ -56,10 +89,10 @@
 
     
 
-    <pre class="language-html"><code class="language-html">.my-survey {<br>   z-index: 122828282882;<br> }</code></pre>
+    <pre class="language-css"><code class="language-css"><span class="token selector">.my-survey</span> <span class="token punctuation">{</span><br>   <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br> <span class="token punctuation">}</span></code></pre>
 
-    <div class="align-center">
-      <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here →</a>
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here <span>⇸</span></a>
     </div>
   </li>
   
@@ -68,10 +101,10 @@
 
     
 
-    <pre class="language-html"><code class="language-html"></code></pre>
+    <pre class="language-css"><code class="language-css"></code></pre>
 
-    <div class="align-center">
-      <a class="read-more" href="/posts/blog-post-2/">Check out what is going on here →</a>
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/blog-post-2/">Check out what is going on here <span>⇸</span></a>
     </div>
   </li>
   
@@ -80,22 +113,22 @@
 
     
 
-    <pre class="language-html"><code class="language-html"></code></pre>
+    <pre class="language-css"><code class="language-css"></code></pre>
 
-    <div class="align-center">
-      <a class="read-more" href="/posts/blog-post/">Check out what is going on here →</a>
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="/posts/blog-post/">Check out what is going on here <span>⇸</span></a>
     </div>
   </li>
   
 </ol>
 
-<nav class="site-bottom-navigation" aria-label="Select page">
+<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
   <ul class="site-pagination">
     
 
     
       <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/" aria-current="page">
+        <a class="site-pagination--link" href="/" aria-current="true" tabindex="-1">
           1
         </a>
       </li>
@@ -109,5 +142,7 @@
             <p>Made with love by <a href="https://twitter.com/cat_a_flame" target="_blank">@cat_a_flame</a> - csshell.dev &copy; 2021</p>
             <p>In association with <a href="https://www.htmhell.dev/" target="_blank">HTMLHell</a> 🔥</p>
         </footer>
+
+        <link rel="stylesheet" href="/js/prism.js">
     </body>
 </html>

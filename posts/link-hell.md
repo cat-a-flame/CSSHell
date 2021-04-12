@@ -4,13 +4,14 @@ author: cat_a_flame
 date: Created
 pageTitle: 'Link: The forgotten accessibility'
 lead: "One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too."
-badcode: '
-a {
+badcode: 'a {
 color: red;
-}'
-goodcode: '
-<input type="text" placeholder="First name" />
-<input type="text" placeholder="First name" />'
+text-decoration: none;
+}
+
+.class { margin: 10px;}
+#myID {display: block; color: #000;}'
+goodcode: 'a {} a:hover {} a:focus {} a:active {}'
 ---
 
 <div class="article-section">
@@ -18,9 +19,9 @@ goodcode: '
 {{ lead }}
 
 
-## Bad code
+## Bad example
 
-```html
+```css
 {{ badcode | prettyCSS | safe }}
 ```
 </div>
@@ -29,7 +30,7 @@ goodcode: '
 ## What is the problem and how to fix it
 
 - Lorem ipsum dolor <code>href</code> sit amet
-- Lorem ipsum dolor sit amet
+- Lorem ipsum dolor sit amet <kbd>ctrl</kbd>
 - Lorem ipsum dolor sit amet
 - Lorem ipsum dolor sit amet
 - Lorem ipsum dolor sit amet
@@ -37,10 +38,10 @@ goodcode: '
 
 <div class="article-section">
 
-## Good code
+## Good example
 
-```html
-{{ goodcode | pretty | safe }}
+```css
+{{ goodcode | prettyCSS | safe }}
 ```
 </div>
 
