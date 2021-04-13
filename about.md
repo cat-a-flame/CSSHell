@@ -1,8 +1,6 @@
-# CSS Hell - To Hell with bad CSS!
-
-Collection of common CSS mistakes, and how to fix them.
-
-https://csshell.dev
+---
+layout: layouts/base.liquid
+---
 
 ## What is this all about?
 

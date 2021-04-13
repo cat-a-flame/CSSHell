@@ -1,0 +1,53 @@
+---
+layout: layouts/base.liquid
+pagination:
+  data: collections.posts
+  size: 5
+  alias: submissions
+  reverse: true
+---
+
+{% set entries = submissions %}
+<ol class="post-list" reversed>
+    {% for post in entries %}
+  <li class="post-list--entry">
+    <h2 class="post-title"><a href="{{ post.url }}">{{ post.data.pageTitle }}</a></h2>
+
+    {% if post.data.lead  %}
+      <p>{{ post.data.lead | md | safe }}</p>
+    {% endif %}
+
+    {% highlight "css" %}
+      {{ post.data.badcode | prettyCSS | safe }}
+    {% endhighlight %}
+
+    <div class="post-bottom-navigation">
+      <a class="read-more" href="{{ post.url }}">Check out what is going on here <span aria-hidden="true">⇸</span></a>
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+
+<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
+  <ul class="site-pagination">
+    {% if pagination.previousPageHref %}
+      <li class="site-pagination--item">
+        <a class="site-pagination--link" href="{{ pagination.previousPageHref }}">« Previous</a>
+      </li>
+    {% endif %}
+
+    {% for page in pagination.hrefs %}
+      <li class="site-pagination--item">
+        <a class="site-pagination--link" href="{{ page }}" {% if pagination.pageNumber == loop.index0 %}aria-current="true" tabindex="-1"{% endif %}>
+          {{ loop.index }}
+        </a>
+      </li>
+    {% endfor %}
+
+    {% if pagination.nextPageHref %}
+      <li class="site-pagination--item">
+        <a class="site-pagination--link" href="{{ pagination.nextPageHref }}">Next »</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

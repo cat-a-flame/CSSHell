@@ -1,0 +1,29 @@
+{
+  "name": "CSSHell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "watch:sass": "npx sass sass:_site/css --watch",
+    "start": "npm run watch:eleventy && watch:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefanye/CSSHell.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stefanye/CSSHell/issues"
+  },
+  "homepage": "https://github.com/Stefanye/CSSHell#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
+  },
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}

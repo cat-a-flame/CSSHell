@@ -1,0 +1,59 @@
+@import "normalize";
+@import "home";
+@import "layout";
+@import "post";
+@import "prism";
+
+:root {
+    --brand-color: #df2137;
+    --heading-font-family: Georgia, 'Times New Roman', Times, serif;
+    --layout-max-width: 50rem;
+    --link-hover-color: #b81c2e;
+    --link-focus-color: #a31929;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: "Roboto", sans-serif;
+    @media screen and (max-width: 840px) {
+        padding: {
+            right: 1rem;
+            left: 1rem;
+        }
+    }
+}
+
+a:not(.read-more, .site-pagination--link) {
+    color: var(--brand-color);
+    text-decoration: none;
+    &:hover {
+        color: var(--link-hover-color);
+        text-decoration: underline;
+    }
+    &:active {
+        color: var(--link-focus-color);
+        text-decoration: underline;
+        outline: none;
+    }
+    &:focus {
+        color: var(--link-focus-color);
+        outline: 0 none;
+    }
+    &:focus-visible {
+        outline: 2px solid var(--link-focus-color);
+    }
+}
+
+/* Helpers */
+.h-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
