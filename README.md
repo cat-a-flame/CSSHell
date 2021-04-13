@@ -23,3 +23,10 @@ how **!important** a good CSS code is.
 ## Got an issue, an idea?
 
 Please report it on [GitHub](https://github.com/Stefanye/CSSHell)!
+
+
+## Credits
+
+The logo's font is [Chomsky](https://github.com/ctrlcctrlv/chomsky) by [Fredrick Brennan](https://github.com/ctrlcctrlv).
+
+The site is using [Eleventy](https://www.11ty.dev/).
