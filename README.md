@@ -2,7 +2,7 @@
 
 Collection of common CSS mistakes, and how to fix them.
 
-https://cssheel.dev
+https://csshell.dev
 
 ## What is this all about?
 
