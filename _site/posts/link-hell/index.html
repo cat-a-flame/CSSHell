@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell - To Hell with bad CSS!</title>
+        <title>CSS Hell  ~ Link & the forgotten accessibility</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -67,7 +67,7 @@
         </header>
         <main>
             <article>
-    <h1 class="post-title">Link: The forgotten accessibility</h1>
+    <h1 class="post-title">Link & the forgotten accessibility</h1>
     <div class="post-meta">
         Posted on 
         <time datetime="Sun Apr 11 2021 13:40:32 GMT+0200 (Central European Summer Time)">2021 April 11.</time>
@@ -76,28 +76,31 @@
     </div>
 
     <div class="article-section">
-<p>One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too.</p>
+<p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code>, <code>:active</code> and states.</p>
 <h2>Bad example</h2>
-<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* This is a comment */</span><br><span class="token selector">.class</span> <span class="token punctuation">{</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">#myID div ul::after</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
 </div>
 <div class="article-section list-section">
 <h2>What is the problem and how to fix it</h2>
 <ul>
-<li>Lorem ipsum dolor <code>href</code> sit amet</li>
-<li>Lorem ipsum dolor sit amet <kbd>ctrl</kbd></li>
-<li>Lorem ipsum dolor sit amet</li>
-<li>Lorem ipsum dolor sit amet</li>
-<li>Lorem ipsum dolor sit amet</li>
+<li>Without the missing states, our link won't be accessible, users might get confused while navigating through our website with a mouse or a keyboard,
+because they won't be able to identify what is clickable and what is not</li>
+<li>By default, browsers set <code>text-decoration: underline;</code> to links, but removing this property can also lead to confusion</li>
+<li>Try using a color which fits with your design but still makes it obvious if a text can be clicked. In this blog, the red color is consistent for clickable items</li>
 </ul>
+</div>
+<div class="post-tip">
+    Try navigating on this page by pressing the <kbd>Tab</kbd> key and see what happens!
 </div>
 <div class="article-section">
 <h2>Good example</h2>
-<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><br><br><span class="token selector">a:hover</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><br><br><span class="token selector">a:focus</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><br><br><span class="token selector">a:active</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">a:hover,<br>a:visited,<br>a:focus</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #a60000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">a:active</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> #a60000<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 </div>
 <div class="article-section resources-section">
 <h2>Resources</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">Content property on MND</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links">Styling links</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript">CSS and JavaScript accessibility best practices</a></li>
 </ul>
 </div>
 </article>

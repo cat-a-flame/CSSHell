@@ -26,6 +26,24 @@
     }
 }
 
+.resources-section {
+    & h2 {
+        margin-bottom: .5rem;
+    }
+    & ul {
+        margin-top: 0;
+        & li:not(:last-child) {
+            margin-bottom: .2rem;
+        }
+    }
+}
+
+.post-tip {
+    background-color: #f9f9f9;
+    border: .125rem dashed var(--brand-color);
+    padding: 1rem;
+}
+
 pre {
     &[class*="language-"] {
         background-color: #f9f9f9;

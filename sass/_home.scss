@@ -65,16 +65,16 @@
     &:hover {
         background-color: var(--link-hover-color);
     }
+    &:active {
+        background-color: var(--link-focus-color);
+        outline: 0 none;
+    }
     &:focus {
         background-color: var(--link-focus-color);
         outline: 0 none;
     }
     &:focus-visible {
         outline: 2px solid var(--link-focus-color);
-    }
-    &:active {
-        background-color: var(--link-focus-color);
-        outline: none;
     }
 }
 
@@ -113,6 +113,11 @@
             background-color: var(--link-hover-color);
             color: #fff;
         }
+        &:active:not([aria-current="true"]) {
+            background-color: var(--link-focus-color);
+            color: #fff;
+            outline: none;
+        }
         &:focus:not([aria-current="true"]) {
             background-color: var(--link-focus-color);
             color: #fff;
@@ -120,11 +125,6 @@
         }
         &:focus-visible:not([aria-current="true"]) {
             outline: 2px solid var(--link-focus-color);
-        }
-        &:active:not([aria-current="true"]) {
-            background-color: var(--link-focus-color);
-            color: #fff;
-            outline: none;
         }
         &[aria-current="true"] {
             background-color: var(--brand-color);

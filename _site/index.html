@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell - To Hell with bad CSS!</title>
+        <title>CSS Hell </title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -71,13 +71,14 @@
 <ol class="post-list" reversed>
     
   <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/link-hell/">Link: The forgotten accessibility</a></h2>
+    <h2 class="post-title"><a href="/posts/link-hell/">Link &amp; the forgotten accessibility</a></h2>
 
     
-      <p>One of the most common mistakes: setting a color for a link, but failing to add :hover, :focus, :active and :visited properties too.</p>
+      <p><p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code>, <code>:active</code> and states.</p>
+</p>
     
 
-    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* This is a comment */</span><br><span class="token selector">.class</span> <span class="token punctuation">{</span><br>  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">#myID div ul::after</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
 
     <div class="post-bottom-navigation">
       <a class="read-more" href="/posts/link-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
@@ -88,8 +89,11 @@
     <h2 class="post-title"><a href="/posts/z-index-hell/">z-index hell</a></h2>
 
     
+      <p><p><code>z-index</code> is something that can measure one's frustration. The amount of digits represent the fact that the developer tried to position the <code>div</code> above the content, but failed miserably.</p>
+</p>
+    
 
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-survey</span> <span class="token punctuation">{</span><br>   <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br> <span class="token punctuation">}</span></code></pre>
+    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 
     <div class="post-bottom-navigation">
       <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
