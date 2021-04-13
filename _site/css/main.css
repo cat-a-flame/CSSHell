@@ -366,7 +366,7 @@ template {
   font-size: 1.8rem;
   font-weight: 400;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 .post-title a {
   color: var(--brand-color);
@@ -431,9 +431,9 @@ template {
   color: var(--brand-color);
   display: block;
   font-weight: 600;
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
   padding-right: 1rem;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.5rem;
   padding-left: 1rem;
   text-decoration: none;
 }
@@ -549,6 +549,7 @@ footer {
 }
 
 .post-meta {
+  color: #666;
   font-size: 0.8rem;
   margin-bottom: 1.5rem;
 }
@@ -578,6 +579,22 @@ pre[class*=language-] {
   border: 0.0625rem dashed #000;
   overflow: auto;
   padding: 1rem;
+  position: relative;
+}
+pre[class*=language-css]::before {
+  background-color: #dfdddd;
+  color: #333;
+  content: "CSS";
+  font-family: "Roboto", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  position: absolute;
+  right: 0.5rem;
+  top: 0;
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.5rem;
 }
 
 code[class*=language-] {
@@ -613,7 +630,9 @@ kbd {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999;
+  color: #d19658;
+  font-family: Georgia, serif;
+  font-style: italic;
 }
 
 .token.punctuation {

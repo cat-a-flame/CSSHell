@@ -9,8 +9,9 @@ color: red;
 text-decoration: none;
 }
 
+/* This is a comment */ 
 .class { margin: 10px;}
-#myID {display: block; color: #000;}'
+#myID div ul::after {display: block; color: #000;}'
 goodcode: 'a {} a:hover {} a:focus {} a:active {}'
 ---
 

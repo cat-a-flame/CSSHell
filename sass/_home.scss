@@ -31,7 +31,7 @@
     }
     margin: {
         top: 0;
-        bottom: .5rem;
+        bottom: 0;
     }
     & a {
         color: var(--brand-color);
@@ -103,9 +103,9 @@
         display: block;
         font-weight: 600;
         padding: {
-            top: .7rem;
+            top: .5rem;
             right: 1rem;
-            bottom: .7rem;
+            bottom: .5rem;
             left: 1rem;
         }
         text-decoration: none;

@@ -1,4 +1,5 @@
 .post-meta {
+    color: #666;
     font-size: .8rem;
     margin-bottom: 1.5rem;
 }
@@ -25,11 +26,34 @@
     }
 }
 
-pre[class*="language-"] {
-    background-color: #f9f9f9;
-    border: .0625rem dashed #000;
-    overflow: auto;
-    padding: 1rem;
+pre {
+    &[class*="language-"] {
+        background-color: #f9f9f9;
+        border: .0625rem dashed #000;
+        overflow: auto;
+        padding: 1rem;
+        position: relative;
+    }
+    &[class*="language-css"]::before {
+        background-color: #dfdddd;
+        color: #333;
+        content: "CSS";
+        font: {
+            family: "Roboto", sans-serif;
+            size: .6rem;
+            weight: 600;
+        }
+        position: absolute;
+        right: .5rem;
+        top: 0;
+        padding: {
+            top: .2rem;
+            right: .5rem;
+            bottom: .1rem;
+            left: .5rem;
+        }
+    }
+    
 }
 
 code {
