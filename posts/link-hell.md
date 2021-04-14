@@ -3,7 +3,7 @@ layout: layouts/post.liquid
 author: cat_a_flame
 date: Created
 pageTitle: 'Link & the forgotten accessibility'
-lead: "One of the most common mistakes: setting a color for a link, but not adding `:hover`, `:focus`, `:active` and states."
+lead: "One of the most common mistakes: setting a color for a link, but not adding `:hover`, `:focus` and `:active` states."
 badcode: 'a {color: #ca0000; text-decoration: none;} /* And that is the end of link styling */'
 goodcode: 'a { color: #ff0000; } a:hover, a:visited, a:focus { color: #a60000; text-decoration: none; } a:active { color: #000000; background-color: #a60000; }'
 ---
