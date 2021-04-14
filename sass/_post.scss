@@ -2,6 +2,13 @@
     color: #666;
     font-size: .8rem;
     margin-bottom: 1.5rem;
+    & a {
+        @media print {
+            &::after {
+                content: " (" attr(href) ")";
+            }
+        }
+    }
 }
 
 .article-section {
@@ -36,6 +43,13 @@
             margin-bottom: .2rem;
         }
     }
+    & a {
+        @media print {
+            &::after {
+                content: " (" attr(href) ")";
+            }
+        }
+    }
 }
 
 .post-tip {
@@ -51,6 +65,9 @@ pre {
         overflow: auto;
         padding: 1rem;
         position: relative;
+        @media print {
+            background-color: #fff;
+        }
     }
     &[class*="language-css"]::before {
         background-color: #dfdddd;
@@ -78,6 +95,9 @@ code {
     &[class*="language-"] {
         font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         color: #ea6155;
+        @media print {
+            color: #000;
+        }
     }
     &:not([class*="language-"]) {
         background-color: #000;

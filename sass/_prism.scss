@@ -6,10 +6,16 @@
 	color: #d19658;
 	font-family: Georgia, serif;
 	font-style: italic;
+	@media print {
+		color: #666;
+	}
 }
 
 .token.punctuation {
 	color: #fc669a;
+	@media print {
+		color: #666;
+	}
 }
 
 .token.tag,
@@ -17,6 +23,9 @@
 .token.namespace,
 .token.deleted {
 	color: #e2777a;
+	@media print {
+		color: #666;
+	}
 }
 
 .token.function-name {
@@ -34,6 +43,9 @@
 .token.constant,
 .token.symbol {
 	color: #2d7192;
+	@media print {
+		color: #000;
+	}
 }
 
 .token.selector,
@@ -42,6 +54,9 @@
 .token.keyword,
 .token.builtin {
 	color: #93329b;
+	@media print {
+		color: #000;
+	}
 }
 
 .token.string,

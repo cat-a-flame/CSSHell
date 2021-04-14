@@ -30,7 +30,7 @@ because they won&#39;t be able to identify what is clickable and what is not&lt;
 &lt;li&gt;Try using a color which fits with your design but still makes it obvious if a text can be clicked. In this blog, the red color is consistent for clickable items&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class=&quot;post-tip&quot;&gt;
+&lt;div class=&quot;post-tip print-hide&quot;&gt;
     Try navigating on this page by pressing the &lt;kbd&gt;Tab&lt;/kbd&gt; key and see what happens!
 &lt;/div&gt;
 &lt;div class=&quot;article-section&quot;&gt;

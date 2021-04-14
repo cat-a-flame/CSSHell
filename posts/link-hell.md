@@ -30,7 +30,7 @@ because they won't be able to identify what is clickable and what is not
 
 </div>
 
-<div class="post-tip">
+<div class="post-tip print-hide">
     Try navigating on this page by pressing the <kbd>Tab</kbd> key and see what happens!
 </div>
 

@@ -474,14 +474,20 @@ template {
   text-decoration: none;
 }
 
-.site-navigation {
+@media print {
+  .site-top-navigation {
+    display: none;
+  }
+}
+
+.site-main-menu {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.site-navigation li:not(:last-child) {
+.site-main-menu li:not(:last-child) {
   margin-right: 1.5rem;
 }
 
@@ -493,6 +499,12 @@ main {
   padding-top: 3rem;
   max-width: var(--layout-max-width);
 }
+@media print {
+  main {
+    border-top: 0 none;
+    padding-top: 0;
+  }
+}
 
 footer {
   font-size: 0.8rem;
@@ -502,6 +514,11 @@ footer {
   margin-left: auto;
   max-width: var(--layout-max-width);
 }
+@media print {
+  footer {
+    display: none;
+  }
+}
 
 /* Logo & subtitle */
 .site-header--heading {
@@ -509,11 +526,22 @@ footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+@media print {
+  .site-header--heading {
+    border-bottom: 0 none;
+    padding-bottom: 1rem;
+  }
+}
 .site-header--home-link {
   display: inline-block;
 }
 .site-header--logo {
   width: 21.875rem;
+}
+@media print {
+  .site-header--logo {
+    width: 7.5rem;
+  }
 }
 @media screen and (max-width: 800px) {
   .site-header--logo {
@@ -547,11 +575,21 @@ footer {
     margin-left: 4rem;
   }
 }
+@media print {
+  .site-header--details {
+    display: none;
+  }
+}
 
 .post-meta {
   color: #666;
   font-size: 0.8rem;
   margin-bottom: 1.5rem;
+}
+@media print {
+  .post-meta a::after {
+    content: " (" attr(href) ")";
+  }
 }
 
 .article-section {
@@ -583,6 +621,11 @@ footer {
 .resources-section ul li:not(:last-child) {
   margin-bottom: 0.2rem;
 }
+@media print {
+  .resources-section a::after {
+    content: " (" attr(href) ")";
+  }
+}
 
 .post-tip {
   background-color: #f9f9f9;
@@ -596,6 +639,11 @@ pre[class*=language-] {
   overflow: auto;
   padding: 1rem;
   position: relative;
+}
+@media print {
+  pre[class*=language-] {
+    background-color: #fff;
+  }
 }
 pre[class*=language-css]::before {
   background-color: #dfdddd;
@@ -616,6 +664,11 @@ pre[class*=language-css]::before {
 code[class*=language-] {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   color: #ea6155;
+}
+@media print {
+  code[class*=language-] {
+    color: #000;
+  }
 }
 code:not([class*=language-]) {
   background-color: #000;
@@ -650,9 +703,23 @@ kbd {
   font-family: Georgia, serif;
   font-style: italic;
 }
+@media print {
+  .token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #666;
+  }
+}
 
 .token.punctuation {
   color: #fc669a;
+}
+@media print {
+  .token.punctuation {
+    color: #666;
+  }
 }
 
 .token.tag,
@@ -660,6 +727,14 @@ kbd {
 .token.namespace,
 .token.deleted {
   color: #e2777a;
+}
+@media print {
+  .token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+    color: #666;
+  }
 }
 
 .token.function-name {
@@ -678,6 +753,14 @@ kbd {
 .token.symbol {
   color: #2d7192;
 }
+@media print {
+  .token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+    color: #000;
+  }
+}
 
 .token.selector,
 .token.important,
@@ -685,6 +768,15 @@ kbd {
 .token.keyword,
 .token.builtin {
   color: #93329b;
+}
+@media print {
+  .token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+    color: #000;
+  }
 }
 
 .token.string,
@@ -736,6 +828,11 @@ body {
     padding-left: 1rem;
   }
 }
+@media print {
+  body {
+    background-color: #fff;
+  }
+}
 
 a:not(.read-more, .site-pagination--link) {
   color: var(--brand-color);
@@ -757,6 +854,11 @@ a:not(.read-more, .site-pagination--link):focus {
 a:not(.read-more, .site-pagination--link):focus-visible {
   outline: 2px solid var(--link-focus-color);
 }
+@media print {
+  a:not(.read-more, .site-pagination--link) {
+    color: #000;
+  }
+}
 
 /* Helpers */
 .h-hidden {
@@ -770,6 +872,12 @@ a:not(.read-more, .site-pagination--link):focus-visible {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+@media print {
+  .print-hide {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

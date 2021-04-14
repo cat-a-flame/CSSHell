@@ -21,6 +21,9 @@ body {
             left: 1rem;
         }
     }
+    @media print {
+        background-color: #fff;
+    }
 }
 
 a:not(.read-more, .site-pagination--link) {
@@ -42,6 +45,9 @@ a:not(.read-more, .site-pagination--link) {
     &:focus-visible {
         outline: 2px solid var(--link-focus-color);
     }
+    @media print {
+        color: #000;
+	}
 }
 
 /* Helpers */
@@ -56,4 +62,10 @@ a:not(.read-more, .site-pagination--link) {
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+.print-hide {
+    @media print {
+        display: none;
+    }
 }

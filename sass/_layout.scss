@@ -16,7 +16,12 @@
     }
 }
 
-.site-navigation {
+.site-top-navigation {
+    @media print {
+        display: none;
+    }
+}
+.site-main-menu {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
@@ -36,6 +41,10 @@ main {
     }
     padding-top: 3rem;
     max-width: var(--layout-max-width);
+    @media print {
+        border-top: 0 none;
+        padding-top: 0;
+    }
 }
 
 footer {
@@ -47,6 +56,9 @@ footer {
         left: auto;
     }
     max-width: var(--layout-max-width);
+    @media print {
+        display: none;
+    }
 }
 
 /* Logo & subtitle */
@@ -57,12 +69,19 @@ footer {
             top: 2rem;
             bottom: 2rem;
         }
+        @media print {
+            border-bottom: 0 none;
+            padding-bottom: 1rem;
+        }
     }
     &--home-link {
         display: inline-block;
     }
     &--logo {
         width: 21.875rem;
+        @media print {
+            width: 7.5rem;
+        }
         @media screen and (max-width: 800px) {
             width: 15.625rem;
         }
@@ -99,6 +118,9 @@ footer {
                 top: .5rem;
                 left: 4rem;
             }
+        }
+        @media print {
+            display: none;
         }
     }
 }
