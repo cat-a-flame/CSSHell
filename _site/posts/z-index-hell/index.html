@@ -70,7 +70,7 @@
     <h1 class="post-title">z-index hell</h1>
     <div class="post-meta">
         Posted on 
-        <time datetime="Sun Apr 11 2021 11:39:32 GMT+0200 (Central European Summer Time)">2021 April 11.</time>
+        <time datetime="Sun Apr 11 2021 22:00:00 GMT+0200 (Central European Summer Time)">2021 April 11.</time>
         by 
         <a href="https://twitter.com/cat_a_flame" target="_blank">cat_a_flame</a>
     </div>
@@ -83,9 +83,10 @@
 <div class="article-section list-section">
 <h2>What is the problem and how to fix it</h2>
 <ul>
-<li><code>z-index</code> is only can be used with <code>absolute</code>, <code>fixed</code>, <code>relative</code> or <code>sticky</code> <code>positions</code>. In my example, this line is missing.</li>
+<li><code>z-index</code> can only be used with <code>absolute</code>, <code>fixed</code>, <code>relative</code> or <code>sticky</code> <code>positions</code>. In my example, this line is missing.</li>
 <li><code>z-index</code> has a maximum value which is <strong>2147483648</strong>, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 integers).</li>
 <li>If you don't change anything on your content's z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.</li>
+<li>You might not even need <code>z-index</code> at all, just push your DOM element a bit further towards your <code>&lt;/body&gt;</code> tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.</li>
 </ul>
 </div>
 <div class="article-section">
@@ -100,6 +101,7 @@
 <li><a href="https://en.wikipedia.org/wiki/2,147,483,647#In_computing">2147483648 on Wikipedia</a></li>
 </ul>
 </div>
+
 </article>
 
 

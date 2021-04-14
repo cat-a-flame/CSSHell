@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.liquid
 author: cat_a_flame
-date: Created
+date: 2021-04-11T20:00:00
 pageTitle: z-index hell
 lead: "`z-index` is something that can measure one's frustration. The amount of digits represent the fact that the developer tried to position the `div` above the content, but failed miserably."
 badcode: '.my-class {z-index: 122828282882;}'
