@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CSSHell</title>
+  <subtitle></subtitle>
+  <link href="https://csshell.dev/feed.xml" rel="self"/>
+  <link href="https://csshell.dev/"/>
+  <updated>2021-04-11T20:10:00Z</updated>
+  <id>https://csshell.dev/</id>
+  <author>
+    <name>@cat_a_flame</name>
+    <email></email>
+  </author>
+  
+  <entry>
+    <title>Link &amp; the forgotten accessibility</title>
+    <link href="https://csshell.dev/posts/link-hell/"/>
+    <updated>2021-04-11T20:10:00Z</updated>
+    <id>https://csshell.dev/posts/link-hell/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;One of the most common mistakes: setting a color for a link, but not adding &lt;code&gt;:hover&lt;/code&gt;, &lt;code&gt;:focus&lt;/code&gt; and &lt;code&gt;:active&lt;/code&gt; states.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ca0000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;/* And that is the end of link styling */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the missing states, our link won&#39;t be accessible, users might get confused while navigating through our website with a mouse or a keyboard,
+because they won&#39;t be able to identify what is clickable and what is not&lt;/li&gt;
+&lt;li&gt;By default, browsers set &lt;code&gt;text-decoration: underline;&lt;/code&gt; to links, but removing this property can also lead to confusion&lt;/li&gt;
+&lt;li&gt;Try using a color which fits with your design but still makes it obvious if a text can be clicked. In this blog, the red color is consistent for clickable items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;post-tip&quot;&gt;
+    Try navigating on this page by pressing the &lt;kbd&gt;Tab&lt;/kbd&gt; key and see what happens!
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ff0000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;a:hover,&lt;br /&gt;a:visited,&lt;br /&gt;a:focus&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #a60000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;a:active&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #000000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #a60000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links&quot;&gt;Styling links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript&quot;&gt;CSS and JavaScript accessibility best practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>z-index hell</title>
+    <link href="https://csshell.dev/posts/z-index-hell/"/>
+    <updated>2021-04-11T20:00:00Z</updated>
+    <id>https://csshell.dev/posts/z-index-hell/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;&lt;code&gt;z-index&lt;/code&gt; is something that can measure one&#39;s frustration. The amount of digits represent the fact that the developer tried to position the &lt;code&gt;div&lt;/code&gt; above the content, but failed miserably.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 122828282882&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; can only be used with &lt;code&gt;absolute&lt;/code&gt;, &lt;code&gt;fixed&lt;/code&gt;, &lt;code&gt;relative&lt;/code&gt; or &lt;code&gt;sticky&lt;/code&gt; &lt;code&gt;positions&lt;/code&gt;. In my example, this line is missing.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; has a maximum value which is &lt;strong&gt;2147483648&lt;/strong&gt;, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 integers).&lt;/li&gt;
+&lt;li&gt;If you don&#39;t change anything on your content&#39;s z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.&lt;/li&gt;
+&lt;li&gt;You might not even need &lt;code&gt;z-index&lt;/code&gt; at all, just push your DOM element a bit further towards your &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/z-index&quot;&gt;z-index property on MND&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index&quot;&gt;Understanding CSS z-index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/2,147,483,647#In_computing&quot;&gt;2147483648 on Wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>
