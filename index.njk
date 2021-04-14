@@ -3,11 +3,10 @@ layout: layouts/base.liquid
 pagination:
   data: collections.posts
   size: 5
-  alias: submissions
+  alias: entries
   reverse: true
 ---
 
-{% set entries = submissions %}
 <ol class="post-list" reversed>
     {% for post in entries %}
   <li class="post-list--entry">
