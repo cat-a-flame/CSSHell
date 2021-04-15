@@ -12,6 +12,11 @@ example, explaining what's wrong with it and how to fix it.
 
 With this, I hope I can help you learn and improve.
 
+
+### Side note
+
+All of my examples are from real websites in production. Since I don't want to hurt anyone, I change the class names for harder identification.
+
 ## Why is it called CSS Hell?
 
 It's a ~~joke~~ idea I stole from [HTMLHell](https://www.htmhell.dev/). I hope adding some fun and sarcasm to learning might help raising awareness of 
