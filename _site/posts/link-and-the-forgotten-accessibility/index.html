@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell </title>
+        <title>CSS Hell  ~ Link & the forgotten accessibility</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -67,71 +67,47 @@
             </div>
         </header>
         <main>
-            
-<ol class="post-list" reversed>
-    
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/prefix-mess/">Prefix mess</a></h2>
-
-    
-      <p><p>Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers' code during the standardization process.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token comment">/* older webkit */</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-moz-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-ms-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-o-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/prefix-mess/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
+            <article>
+    <h1 class="post-title">Link & the forgotten accessibility</h1>
+    <div class="post-meta">
+        Posted on 
+        <time datetime="Sun Apr 11 2021 22:10:00 GMT+0200 (Central European Summer Time)">2021 April 11.</time>
+        by 
+        <a href="https://twitter.com/cat_a_flame" target="_blank">cat_a_flame</a>
     </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/link-and-the-forgotten-accessibility/">Link &amp; the forgotten accessibility</a></h2>
 
-    
-      <p><p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code> and <code>:active</code> states.</p>
-</p>
-    
+    <div class="article-section">
+<p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code> and <code>:active</code> states.</p>
+<h2>Bad example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
+</div>
+<div class="article-section list-section">
+<h2>What is the problem and how to fix it</h2>
+<ul>
+<li>Without the missing states, our link won't be accessible, users might get confused while navigating through our website with a mouse or a keyboard,
+because they won't be able to identify what is clickable and what is not</li>
+<li>By default, browsers set <code>text-decoration: underline;</code> to links, but removing this property can also lead to confusion</li>
+<li>Try using a color which fits with your design but still makes it obvious if a text can be clicked. In this blog, the red color is consistent for clickable items</li>
+</ul>
+</div>
+<div class="post-tip print-hide">
+    Try navigating on this page by pressing the <kbd>Tab</kbd> key and see what happens!
+</div>
+<div class="article-section">
+<h2>Good example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">a:hover,<br>a:visited,<br>a:focus</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #a60000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">a:active</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span><br>  <span class="token property">background-color</span><span class="token punctuation">:</span> #a60000<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="article-section resources-section">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links">Styling links</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript">CSS and JavaScript accessibility best practices</a></li>
+</ul>
+</div>
 
-    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
+</article>
 
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/link-and-the-forgotten-accessibility/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/z-index-hell/">z-index hell</a></h2>
 
-    
-      <p><p><code>z-index</code> is something that can measure one's frustration. The amount of digits represent the fact that the developer tried to position the <code>div</code> above the content, but failed miserably.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-</ol>
-
-<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
-  <ul class="site-pagination">
-    
-
-    
-      <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/" aria-current="true" tabindex="-1">
-          1
-        </a>
-      </li>
-    
-
-    
-  </ul>
-</nav>
         </main>
         <footer>
             <p>Made with love by <a href="https://twitter.com/cat_a_flame" target="_blank">@cat_a_flame</a> - csshell.dev &copy; 2021</p>

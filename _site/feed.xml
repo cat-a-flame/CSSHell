@@ -45,9 +45,9 @@
   
   <entry>
     <title>Link &amp; the forgotten accessibility</title>
-    <link href="https://csshell.dev/posts/link-hell/"/>
+    <link href="https://csshell.dev/posts/link-and-the-forgotten-accessibility/"/>
     <updated>2021-04-11T20:10:00Z</updated>
-    <id>https://csshell.dev/posts/link-hell/</id>
+    <id>https://csshell.dev/posts/link-and-the-forgotten-accessibility/</id>
     <content type="html">&lt;div class=&quot;article-section&quot;&gt;
 &lt;p&gt;One of the most common mistakes: setting a color for a link, but not adding &lt;code&gt;:hover&lt;/code&gt;, &lt;code&gt;:focus&lt;/code&gt; and &lt;code&gt;:active&lt;/code&gt; states.&lt;/p&gt;
 &lt;h2&gt;Bad example&lt;/h2&gt;
