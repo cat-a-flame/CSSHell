@@ -4,12 +4,44 @@
   <subtitle></subtitle>
   <link href="https://csshell.dev/feed.xml" rel="self"/>
   <link href="https://csshell.dev/"/>
-  <updated>2021-04-11T20:10:00Z</updated>
+  <updated>2021-04-15T14:50:00Z</updated>
   <id>https://csshell.dev/</id>
   <author>
     <name>@cat_a_flame</name>
     <email></email>
   </author>
+  
+  <entry>
+    <title>Prefix mess</title>
+    <link href="https://csshell.dev/posts/prefix-mess/"/>
+    <updated>2021-04-15T14:50:00Z</updated>
+    <id>https://csshell.dev/posts/prefix-mess/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers&#39; code during the standardization process.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token comment&quot;&gt;/* older webkit */&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-moz-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-ms-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-o-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding unnecessary prefixes makes your code harder to read and maintain. The file size can also increase for no reason.&lt;/li&gt;
+&lt;li&gt;If not sure which property requires a prefix, and which one not, use &lt;a href=&quot;https://caniuse.com/&quot;&gt;caniuse.com&lt;/a&gt;. With this tool you can check the overall support for every property, when they plan to leave the prefix (if it has any), and so on.&lt;/li&gt;
+&lt;li&gt;If you don&#39;t want to mess with prefixes (understandable), you can use &lt;a href=&quot;https://www.npmjs.com/package/autoprefixer&quot;&gt;Autoprefixer&lt;/a&gt; in your build process, and this part can be covered automatically.&lt;/li&gt;
+&lt;li&gt;Browser vendors are working to stop using vendor prefixes for experimental features. Web developers have been using them on production Web sites, despite their experimental nature. This has made it more difficult for browser vendors to ensure compatibility and to work on new features; it&#39;s also been harmful to smaller browsers who wind up forced to add other browsers&#39; prefixes in order to load popular web sites (Source: MDN).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix&quot;&gt;Vendor prefix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Link &amp; the forgotten accessibility</title>

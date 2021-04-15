@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell </title>
+        <title>CSS Hell  ~ Prefix mess</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -67,71 +67,43 @@
             </div>
         </header>
         <main>
-            
-<ol class="post-list" reversed>
-    
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/prefix-mess/">Prefix mess</a></h2>
-
-    
-      <p><p>Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers' code during the standardization process.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token comment">/* older webkit */</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-moz-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-ms-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-o-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/prefix-mess/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
+            <article>
+    <h1 class="post-title">Prefix mess</h1>
+    <div class="post-meta">
+        Posted on 
+        <time datetime="Thu Apr 15 2021 16:50:00 GMT+0200 (Central European Summer Time)">2021 April 15.</time>
+        by 
+        <a href="https://twitter.com/cat_a_flame" target="_blank">cat_a_flame</a>
     </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/link-hell/">Link &amp; the forgotten accessibility</a></h2>
 
-    
-      <p><p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code> and <code>:active</code> states.</p>
-</p>
-    
+    <div class="article-section">
+<p>Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers' code during the standardization process.</p>
+<h2>Bad example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token comment">/* older webkit */</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-moz-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-ms-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-o-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="article-section list-section">
+<h2>What is the problem and how to fix it</h2>
+<ul>
+<li>Adding unnecessary prefixes makes your code harder to read and maintain. The file size can also increase for no reason.</li>
+<li>If not sure which property requires a prefix, and which one not, use <a href="https://caniuse.com">caniuse.com</a>. With this tool you can check the overall support for every property, when they plan to leave the prefix (if it has any), and so on.</li>
+<li>If you don't want to mess with prefixes (understandable), you can use <a href="https://www.npmjs.com/package/autoprefixer">Autoprefixer</a> in your build process, and this part can be covered automatically.</li>
+<li>Browser vendors are working to stop using vendor prefixes for experimental features. Web developers have been using them on production Web sites, despite their experimental nature. This has made it more difficult for browser vendors to ensure compatibility and to work on new features; it's also been harmful to smaller browsers who wind up forced to add other browsers' prefixes in order to load popular web sites (Source: MDN).</li>
+</ul>
+</div>
+<div class="article-section">
+<h2>Good example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="article-section resources-section">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix">Vendor prefix</a></li>
+</ul>
+</div>
 
-    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
+</article>
 
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/link-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/z-index-hell/">z-index hell</a></h2>
 
-    
-      <p><p><code>z-index</code> is something that can measure one's frustration. The amount of digits represent the fact that the developer tried to position the <code>div</code> above the content, but failed miserably.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-</ol>
-
-<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
-  <ul class="site-pagination">
-    
-
-    
-      <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/" aria-current="true" tabindex="-1">
-          1
-        </a>
-      </li>
-    
-
-    
-  </ul>
-</nav>
         </main>
         <footer>
             <p>Made with love by <a href="https://twitter.com/cat_a_flame" target="_blank">@cat_a_flame</a> - csshell.dev &copy; 2021</p>
