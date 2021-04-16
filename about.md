@@ -19,7 +19,7 @@ All of my examples are from real websites in production. Since I don't want to h
 
 ## Why is it called CSS Hell?
 
-It's a ~~joke~~ idea I stole from [HTMLHell](https://www.htmhell.dev/). I hope adding some fun and sarcasm to learning might help raising awareness of 
+It's a ~~joke~~ idea I stole from [HTMHell](https://www.htmhell.dev/). I hope adding some fun and sarcasm to learning might help raising awareness of 
 how **!important** a good CSS code is.
 
 
