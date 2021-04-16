@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell {% if pageTitle %} ~ {{pageTitle}}{%endif%}</title>
+        <title>CSS Hell {% if pageTitle %} - {{pageTitle}}{%endif%}</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -13,13 +13,13 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@cat_a_flame">
         <meta name="twitter:creator" content="@cat_a_flame">
-        <meta name="twitter:title" content="CSS Hell - To Hell with bad CSS!">
-        <meta name="twitter:description" content="Collection of common CSS mistakes, and how to fix them">
+        <meta name="twitter:title" content="CSS Hell {% if pageTitle %} - {{pageTitle}}{%endif%}">
+        <meta name="twitter:description" content="{% if lead %}{{lead}}{%else%}Collection of common CSS mistakes, and how to fix them {%endif%}">
         <meta name="twitter:image" content="https://csshell.dev/images/csshell_logo.png">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="CSS Hell - To Hell with bad CSS!">
-        <meta property="og:description" content="Collection of common CSS mistakes, and how to fix them">
+        <meta property="og:title" content="CSS Hell {% if pageTitle %} - {{pageTitle}}{%endif%}">
+        <meta property="og:description" content="{% if lead %}{{lead}}{%else%}Collection of common CSS mistakes, and how to fix them {%endif%}">
         <meta property="og:image" content="https://csshell.dev/images/csshell_logo.png">
         <meta property="og:url" content="https://csshell.dev">
         <meta property="og:site_name" content="CSS Hell">
