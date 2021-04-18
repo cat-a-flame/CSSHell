@@ -86,7 +86,7 @@
 <h2>What is the problem and how to fix it</h2>
 <ul>
 <li><code>z-index</code> can only be used with <code>absolute</code>, <code>fixed</code>, <code>relative</code> or <code>sticky</code> <code>positions</code>. In my example, this line is missing.</li>
-<li><code>z-index</code> has a maximum value which is <strong>2147483648</strong>, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 integers).</li>
+<li><code>z-index</code> has a maximum value which is <strong>2147483648</strong>, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 digits).</li>
 <li>If you don't change anything on your content's z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.</li>
 <li>You might not even need <code>z-index</code> at all, just push your DOM element a bit further towards your <code>&lt;/body&gt;</code> tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.</li>
 </ul>

@@ -129,7 +129,7 @@ because they won&#39;t be able to identify what is clickable and what is not&lt;
 &lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; can only be used with &lt;code&gt;absolute&lt;/code&gt;, &lt;code&gt;fixed&lt;/code&gt;, &lt;code&gt;relative&lt;/code&gt; or &lt;code&gt;sticky&lt;/code&gt; &lt;code&gt;positions&lt;/code&gt;. In my example, this line is missing.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; has a maximum value which is &lt;strong&gt;2147483648&lt;/strong&gt;, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 integers).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; has a maximum value which is &lt;strong&gt;2147483648&lt;/strong&gt;, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 digits).&lt;/li&gt;
 &lt;li&gt;If you don&#39;t change anything on your content&#39;s z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.&lt;/li&gt;
 &lt;li&gt;You might not even need &lt;code&gt;z-index&lt;/code&gt; at all, just push your DOM element a bit further towards your &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.&lt;/li&gt;
 &lt;/ul&gt;

@@ -23,7 +23,7 @@ goodcode: '.my-class {position: absolute; z-index: 2;}'
 ## What is the problem and how to fix it
 
 - `z-index` can only be used with `absolute`, `fixed`, `relative` or `sticky` `positions`. In my example, this line is missing.
-- `z-index` has a maximum value which is **2147483648**, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 integers).
+- `z-index` has a maximum value which is **2147483648**, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 digits).
 - If you don't change anything on your content's z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.
 - You might not even need `z-index` at all, just push your DOM element a bit further towards your `</body>` tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.
 </div>
