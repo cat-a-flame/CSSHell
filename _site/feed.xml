@@ -4,12 +4,48 @@
   <subtitle></subtitle>
   <link href="https://csshell.dev/feed.xml" rel="self"/>
   <link href="https://csshell.dev/"/>
-  <updated>2021-04-15T14:50:00Z</updated>
+  <updated>2021-04-18T18:44:00Z</updated>
   <id>https://csshell.dev/</id>
   <author>
     <name>@cat_a_flame</name>
     <email></email>
   </author>
+  
+  <entry>
+    <title>font-family everywhere!</title>
+    <link href="https://csshell.dev/posts/font-everywhere/"/>
+    <updated>2021-04-18T18:44:00Z</updated>
+    <id>https://csshell.dev/posts/font-everywhere/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;footer&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Duplicating the &lt;code&gt;font-family&lt;/code&gt; import only leads to hard maintainability. If, for some reason you want to change your website&#39;s font, you have to do it in every line, or, in all files.&lt;/li&gt;
+&lt;li&gt;If you add the font name by hand, there is a high chance you mistype it once and the browser will load a totally different font (once I saw Ariel instead of Arial...).&lt;/li&gt;
+&lt;li&gt;Quotation is not necessary, but it&#39;s a good approach to use it, mostly when the font name contains whitespaces.&lt;/li&gt;
+&lt;li&gt;Always add a fallback option. If &lt;code&gt;Roboto&lt;/code&gt; isn&#39;t available, then the user-agent-defined sans serif font will be used. Note, these are not font names, so don&#39;t use quotation marks!&lt;/li&gt;
+&lt;li&gt;If you want to use a different kind of font for your headings, links, whatever, the best approach it to store the name as a CSS variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Roboto&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sans-serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Another good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;--heading-font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Georgia&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Times New Roman&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Times&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.title&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;--heading-font-family&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-family&quot;&gt;CSS Font Module Level 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/font-family&quot;&gt;font-family on MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Prefix mess</title>

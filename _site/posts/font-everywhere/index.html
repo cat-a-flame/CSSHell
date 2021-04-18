@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CSS Hell  - To Hell with bad CSS!</title>
+        <title>CSS Hell  - font-family everywhere!</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -13,13 +13,13 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@cat_a_flame">
         <meta name="twitter:creator" content="@cat_a_flame">
-        <meta name="twitter:title" content="CSS Hell  - To Hell with bad CSS!">
-        <meta name="twitter:description" content="Collection of common CSS mistakes, and how to fix them ">
+        <meta name="twitter:title" content="CSS Hell  - font-family everywhere!">
+        <meta name="twitter:description" content="Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.">
         <meta name="twitter:image" content="https://csshell.dev/images/csshell_logo.png">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="CSS Hell  - To Hell with bad CSS!">
-        <meta property="og:description" content="Collection of common CSS mistakes, and how to fix them ">
+        <meta property="og:title" content="CSS Hell  - font-family everywhere!">
+        <meta property="og:description" content="Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.">
         <meta property="og:image" content="https://csshell.dev/images/csshell_logo.png">
         <meta property="og:url" content="https://csshell.dev">
         <meta property="og:site_name" content="CSS Hell">
@@ -68,86 +68,47 @@
             </div>
         </header>
         <main>
-            
-<ol class="post-list" reversed>
-    
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/font-everywhere/">font-family everywhere!</a></h2>
-
-    
-      <p><p>Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class-1</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.my-class-2</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">p</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.my-class-3</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">footer</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/font-everywhere/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
+            <article>
+    <h1 class="post-title">font-family everywhere!</h1>
+    <div class="post-meta">
+        Posted on 
+        <time datetime="Sun Apr 18 2021 20:44:00 GMT+0200 (Central European Summer Time)">2021 April 18.</time>
+        by 
+        <a href="https://twitter.com/cat_a_flame" target="_blank">cat_a_flame</a>
     </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/prefix-mess/">Prefix mess</a></h2>
 
-    
-      <p><p>Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers' code during the standardization process.</p>
-</p>
-    
+    <div class="article-section">
+<p>Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.</p>
+<h2>Bad example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">.my-class-1</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.my-class-2</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">p</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.my-class-3</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">footer</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="article-section list-section">
+<h2>What is the problem and how to fix it</h2>
+<ul>
+<li>Duplicating the <code>font-family</code> import only leads to hard maintainability. If, for some reason you want to change your website's font, you have to do it in every line, or, in all files.</li>
+<li>If you add the font name by hand, there is a high chance you mistype it once and the browser will load a totally different font (once I saw Ariel instead of Arial...).</li>
+<li>Quotation is not necessary, but it's a good approach to use it, mostly when the font name contains whitespaces.</li>
+<li>Always add a fallback option. If <code>Roboto</code> isn't available, then the user-agent-defined sans serif font will be used. Note, these are not font names, so don't use quotation marks!</li>
+<li>If you want to use a different kind of font for your headings, links, whatever, the best approach it to store the name as a CSS variable.</li>
+</ul>
+</div>
+<div class="article-section">
+<h2>Good example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Roboto"</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h2>Another good example</h2>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--heading-font-family</span><span class="token punctuation">:</span> <span class="token string">"Georgia"</span><span class="token punctuation">,</span> <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span> <span class="token string">"Times"</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.title</span> <span class="token punctuation">{</span><br>  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--heading-font-family<span class="token punctuation">;</span> <span class="token punctuation">)</span><br><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="article-section resources-section">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-family">CSS Font Module Level 3</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">font-family on MDN</a></li>
+</ul>
+</div>
 
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token comment">/* older webkit */</span><br>  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-moz-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-ms-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">-o-transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br>  <span class="token property">transition</span><span class="token punctuation">:</span> left 400ms ease-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+</article>
 
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/prefix-mess/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/link-and-the-forgotten-accessibility/">Link &amp; the forgotten accessibility</a></h2>
 
-    
-      <p><p>One of the most common mistakes: setting a color for a link, but not adding <code>:hover</code>, <code>:focus</code> and <code>:active</code> states.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">a</span> <span class="token punctuation">{</span><br>  <span class="token property">color</span><span class="token punctuation">:</span> #ca0000<span class="token punctuation">;</span><br>  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* And that is the end of link styling */</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/link-and-the-forgotten-accessibility/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-  <li class="post-list--entry">
-    <h2 class="post-title"><a href="/posts/z-index-hell/">z-index hell</a></h2>
-
-    
-      <p><p><code>z-index</code> is something that can measure one's frustration. The amount of digits represent the fact that the developer tried to position the <code>div</code> above the content, but failed miserably.</p>
-</p>
-    
-
-    <pre class="language-css"><code class="language-css"><span class="token selector">.my-class</span> <span class="token punctuation">{</span><br>  <span class="token property">z-index</span><span class="token punctuation">:</span> 122828282882<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-
-    <div class="post-bottom-navigation">
-      <a class="read-more" href="/posts/z-index-hell/">Check out what is going on here <span aria-hidden="true">⇸</span></a>
-    </div>
-  </li>
-  
-</ol>
-
-<nav class="site-bottom-navigation" role="navigation" aria-label="Pagination">
-  <ul class="site-pagination">
-    
-
-    
-      <li class="site-pagination--item">
-        <a class="site-pagination--link" href="/" aria-current="true" tabindex="-1">
-          1
-        </a>
-      </li>
-    
-
-    
-  </ul>
-</nav>
         </main>
         <footer>
             <p>Made with love by <a href="https://twitter.com/cat_a_flame" target="_blank">@cat_a_flame</a> - csshell.dev &copy; 2021</p>
