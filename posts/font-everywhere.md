@@ -6,7 +6,7 @@ pageTitle: 'font-family everywhere!'
 lead: "Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue."
 badcode: '.my-class-1 {font-family: Roboto;} .my-class-2 {font-family: Roboto;} p {font-family: Roboto;} .my-class-3 {font-family: Roboto;} footer {font-family: Roboto;}'
 goodcode: 'body {font-family: "Roboto", sans-serif;}'
-goodcode2: ':root {--heading-font-family: "Georgia", "Times New Roman", "Times", serif;} .title {font-family: var(--heading-font-family;)}'
+goodcode2: ':root {--heading-font-family: "Georgia", "Times New Roman", "Times", serif;} .title {font-family: var(--heading-font-family);}'
 ---
 
 <div class="article-section">
