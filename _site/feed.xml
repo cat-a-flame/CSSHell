@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CSSHell</title>
+  <subtitle></subtitle>
+  <link href="https://csshell.dev/feed.xml" rel="self"/>
+  <link href="https://csshell.dev/"/>
+  <updated>2021-04-18T18:44:00Z</updated>
+  <id>https://csshell.dev/</id>
+  <author>
+    <name>@cat_a_flame</name>
+    <email></email>
+  </author>
+  
+  <entry>
+    <title>font-family everywhere!</title>
+    <link href="https://csshell.dev/posts/font-everywhere/"/>
+    <updated>2021-04-18T18:44:00Z</updated>
+    <id>https://csshell.dev/posts/font-everywhere/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;Specifying the primary font for almost every selector is not a good approach, yet I often run into this issue.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class-3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;footer&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Roboto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Duplicating the &lt;code&gt;font-family&lt;/code&gt; import only leads to hard maintainability. If, for some reason you want to change your website&#39;s font, you have to do it in every line, or, in all files.&lt;/li&gt;
+&lt;li&gt;If you add the font name by hand, there is a high chance you mistype it once and the browser will load a totally different font (once I saw Ariel instead of Arial...).&lt;/li&gt;
+&lt;li&gt;Quotation is not necessary, but it&#39;s a good approach to use it, mostly when the font name contains whitespaces.&lt;/li&gt;
+&lt;li&gt;Always add a fallback option. If &lt;code&gt;Roboto&lt;/code&gt; isn&#39;t available, then the user-agent-defined sans serif font will be used. Note, these are not font names, so don&#39;t use quotation marks!&lt;/li&gt;
+&lt;li&gt;If you want to use a different kind of font for your headings, links, whatever, the best approach it to store the name as a CSS variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Roboto&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sans-serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Another good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;--heading-font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Georgia&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Times New Roman&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Times&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;.title&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;--heading-font-family&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#propdef-font-family&quot;&gt;CSS Font Module Level 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/font-family&quot;&gt;font-family on MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Prefix mess</title>
+    <link href="https://csshell.dev/posts/prefix-mess/"/>
+    <updated>2021-04-15T14:50:00Z</updated>
+    <id>https://csshell.dev/posts/prefix-mess/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;Browser vendors sometimes add prefixes to experimental or nonstandard CSS properties and JavaScript APIs, so developers can experiment with new ideas while — in theory — preventing their experiments from being relied upon and then breaking web developers&#39; code during the standardization process.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token comment&quot;&gt;/* older webkit */&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-moz-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-ms-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;-o-transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding unnecessary prefixes makes your code harder to read and maintain. The file size can also increase for no reason.&lt;/li&gt;
+&lt;li&gt;If not sure which property requires a prefix, and which one not, use &lt;a href=&quot;https://caniuse.com/&quot;&gt;caniuse.com&lt;/a&gt;. With this tool you can check the overall support for every property, when they plan to leave the prefix (if it has any), and so on.&lt;/li&gt;
+&lt;li&gt;If you don&#39;t want to mess with prefixes (understandable), you can use &lt;a href=&quot;https://www.npmjs.com/package/autoprefixer&quot;&gt;Autoprefixer&lt;/a&gt; in your build process, and this part can be covered automatically.&lt;/li&gt;
+&lt;li&gt;Browser vendors are working to stop using vendor prefixes for experimental features. Web developers have been using them on production Web sites, despite their experimental nature. This has made it more difficult for browser vendors to ensure compatibility and to work on new features; it&#39;s also been harmful to smaller browsers who wind up forced to add other browsers&#39; prefixes in order to load popular web sites (Source: MDN).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; left 400ms ease-out&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix&quot;&gt;Vendor prefix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Link &amp; the forgotten accessibility</title>
+    <link href="https://csshell.dev/posts/link-and-the-forgotten-accessibility/"/>
+    <updated>2021-04-11T20:10:00Z</updated>
+    <id>https://csshell.dev/posts/link-and-the-forgotten-accessibility/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;One of the most common mistakes: setting a color for a link, but not adding &lt;code&gt;:hover&lt;/code&gt;, &lt;code&gt;:focus&lt;/code&gt; and &lt;code&gt;:active&lt;/code&gt; states.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ca0000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;/* And that is the end of link styling */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the missing states, our link won&#39;t be accessible, users might get confused while navigating through our website with a mouse or a keyboard,
+because they won&#39;t be able to identify what is clickable and what is not&lt;/li&gt;
+&lt;li&gt;By default, browsers set &lt;code&gt;text-decoration: underline;&lt;/code&gt; to links, but removing this property can also lead to confusion&lt;/li&gt;
+&lt;li&gt;Try using a color which fits with your design but still makes it obvious if a text can be clicked. In this blog, the red color is consistent for clickable items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;post-tip print-hide&quot;&gt;
+    Try navigating on this page by pressing the &lt;kbd&gt;Tab&lt;/kbd&gt; key and see what happens!
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ff0000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;a:hover,&lt;br /&gt;a:visited,&lt;br /&gt;a:focus&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #a60000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;a:active&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #000000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #a60000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links&quot;&gt;Styling links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript&quot;&gt;CSS and JavaScript accessibility best practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>z-index hell</title>
+    <link href="https://csshell.dev/posts/z-index-hell/"/>
+    <updated>2021-04-11T20:00:00Z</updated>
+    <id>https://csshell.dev/posts/z-index-hell/</id>
+    <content type="html">&lt;div class=&quot;article-section&quot;&gt;
+&lt;p&gt;&lt;code&gt;z-index&lt;/code&gt; is something that can measure one&#39;s frustration. The amount of digits represent the fact that the developer tried to position the &lt;code&gt;div&lt;/code&gt; above the content, but failed miserably.&lt;/p&gt;
+&lt;h2&gt;Bad example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 122828282882&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section list-section&quot;&gt;
+&lt;h2&gt;What is the problem and how to fix it&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; can only be used with &lt;code&gt;absolute&lt;/code&gt;, &lt;code&gt;fixed&lt;/code&gt;, &lt;code&gt;relative&lt;/code&gt; or &lt;code&gt;sticky&lt;/code&gt; &lt;code&gt;positions&lt;/code&gt;. In my example, this line is missing.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z-index&lt;/code&gt; has a maximum value which is &lt;strong&gt;2147483648&lt;/strong&gt;, the maximum positive value for a 32-bit signed binary integer in computing (the example has +2 digits).&lt;/li&gt;
+&lt;li&gt;If you don&#39;t change anything on your content&#39;s z-axis value, adding 2 or 3 has the same effect as 100 or 10000. Adding huge numbers can lead to hard maintainability.&lt;/li&gt;
+&lt;li&gt;You might not even need &lt;code&gt;z-index&lt;/code&gt; at all, just push your DOM element a bit further towards your &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; tag, it will be rendered later than the elements in the same layer preceding it, so it can cover them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section&quot;&gt;
+&lt;h2&gt;Good example&lt;/h2&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; absolute&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;article-section resources-section&quot;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/z-index&quot;&gt;z-index property on MND&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index&quot;&gt;Understanding CSS z-index&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/2,147,483,647#In_computing&quot;&gt;2147483648 on Wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>
