@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass sass:_site/css --watch",
-    "start": "npm run watch:eleventy && watch:sass"
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "watch:sass": "node-sass --watch sass/main.scss > _site/css/main.css",
+    "start": "netlify dev"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
   },
   "dependencies": {
-    "sass": "^1.32.8"
+    "node-sass": "^5.0.0"
   }
 }
