@@ -26,3 +26,8 @@ how **!important** a good CSS code is.
 ## Got an issue, an idea?
 
 Please report it on [GitHub](https://github.com/Stefanye/CSSHell)!
+
+
+## Would you like to support my work?
+
+CSS Hell is made with love and a lots of coffee. If you wish to buy me one, you can do it on [Ko-fi](https://ko-fi.com/cat_a_flame) ❤️
