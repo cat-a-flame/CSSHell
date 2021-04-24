@@ -6,7 +6,7 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "watch:sass": "node-sass --watch sass/main.scss > _site/css/main.css",
+    "watch:sass": "node-sass --watch sass/main.scss _site/css/main.css",
     "start": "netlify dev"
   },
   "repository": {
