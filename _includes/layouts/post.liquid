@@ -7,7 +7,7 @@ layout: layouts/base.liquid
         Posted on 
         <time datetime="{{ page.date }}">{{ page.date | date: "%Y %B %d." }}</time>
         by 
-        <a href="https://twitter.com/{{ author }}" target="_blank">{{ author }}</a>
+        <a href="https://twitter.com/{{ author }}" target="_blank" rel="noopener">{{ author }}</a>
     </div>
 
     {{ content }}

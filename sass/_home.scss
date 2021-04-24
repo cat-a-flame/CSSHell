@@ -51,30 +51,39 @@
     display: inline-flex;
     font-weight: 500;
     padding: {
-        top: .5rem;
+        top: .8rem;
         right: 1.2rem;
-        bottom: .5rem;
+        bottom: .8rem;
         left: 1.2rem;
     }
     text-decoration: none;
     margin: 0 auto;
     & span {
         font-size: 1.5rem;
+        line-height: 1;
         margin-left: 1ch;
     }
     &:hover {
         background-color: var(--link-hover-color);
+        color: #fff;
+        text-decoration: none;
     }
     &:active {
         background-color: var(--link-focus-color);
+        color: #fff;
         outline: 0 none;
+        text-decoration: none;
     }
     &:focus {
         background-color: var(--link-focus-color);
+        color: #fff;
         outline: 0 none;
+        text-decoration: none;
     }
     &:focus-visible {
+        color: #fff;
         outline: 2px solid var(--link-focus-color);
+        text-decoration: none;
     }
 }
 
