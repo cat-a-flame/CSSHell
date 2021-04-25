@@ -13,6 +13,9 @@
 
 .article-section {
     margin-bottom: 3rem;
+    & img {
+        max-width: 100%;
+    }
 }
 
 .list-section ul {
