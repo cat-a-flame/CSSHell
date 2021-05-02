@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.liquid
 author: vanilla_ixth
-date: 2021-04-24T13:00:00
+date: 2021-05-03T20:44:00
 pageTitle: font-variation-misfortune
 lead: Variable fonts are awesome, but unnecessary usage of `font-variation-settings` will eventually break your styles.
 htmlcode: <span class="italic bold">italic bold?</span>
@@ -19,13 +19,10 @@ goodcode: >-
 
 ## Bad example
 
-Assume having following stylesheet:
-
 ```css
 {{ badcode | prettyCSS | safe }}
 ```
 
-Also assume having an element, which matches multiple rules:
 ```html
 {{ htmlcode | pretty | safe }}
 ```
