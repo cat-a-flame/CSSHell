@@ -40,7 +40,7 @@ goodcode: '.my-class {position: absolute; z-index: 2;}'
 <div class="article-section resources-section">
 
 ## Resources
-- [z-index property on MND](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+- [z-index property on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 - [Understanding CSS z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
 - [2147483648 on Wikipedia](https://en.wikipedia.org/wiki/2,147,483,647#In_computing)
 </div>
