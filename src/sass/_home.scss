@@ -47,7 +47,7 @@
 .read-more {
     align-items: center;
     background: var(--brand-color);
-    color: #fff;
+    color: var(--link-text-color);
     display: inline-flex;
     font-weight: 500;
     padding: {
@@ -65,23 +65,23 @@
     }
     &:hover {
         background-color: var(--link-hover-color);
-        color: #fff;
+        color: var(--link-text-color);
         text-decoration: none;
     }
     &:active {
         background-color: var(--link-focus-color);
-        color: #fff;
+        color: var(--link-text-color);
         outline: 0 none;
         text-decoration: none;
     }
     &:focus {
         background-color: var(--link-focus-color);
-        color: #fff;
+        color: var(--link-text-color);
         outline: 0 none;
         text-decoration: none;
     }
     &:focus-visible {
-        color: #fff;
+        color: var(--link-text-color);
         outline: 2px solid var(--link-focus-color);
         text-decoration: none;
     }
@@ -120,16 +120,16 @@
         text-decoration: none;
         &:hover:not([aria-current="true"]) {
             background-color: var(--link-hover-color);
-            color: #fff;
+            color: var(--link-text-color);
         }
         &:active:not([aria-current="true"]) {
             background-color: var(--link-focus-color);
-            color: #fff;
+            color: var(--link-text-color);
             outline: none;
         }
         &:focus:not([aria-current="true"]) {
             background-color: var(--link-focus-color);
-            color: #fff;
+            color: var(--link-text-color);
             outline: 0 none;
         }
         &:focus-visible:not([aria-current="true"]) {
@@ -137,7 +137,7 @@
         }
         &[aria-current="true"] {
             background-color: var(--brand-color);
-            color: #fff;
+            color: var(--link-text-color);
             pointer-events: none;
         }
     }

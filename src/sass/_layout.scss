@@ -102,7 +102,7 @@ footer {
         }
     }    
     &--details {
-        color: #444;
+        color: var(--heading-font-color);
         font: {
             family: var(--heading-font-family);
             size: 1.4rem;
