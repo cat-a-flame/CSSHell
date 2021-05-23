@@ -9,7 +9,7 @@
     "build:sass": "node-sass src/sass -o src/css --output-style compressed",
     "watch:sass": "node-sass --watch src/sass -o src/css --output-style compressed",
     "serve": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all build:sass build:eleventy",
     "start": "netlify dev"
   },
   "repository": {
