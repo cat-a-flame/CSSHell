@@ -89,6 +89,9 @@ footer {
             fill: url('#site-header--logo-gradient');
         }
         & stop {
+            .site-header--home-link & {
+                stop-color: var(--site-header-logo-color);
+            }
             transition: .2s;
             .site-header--home-link:hover &,
             .site-header--home-link:focus & {

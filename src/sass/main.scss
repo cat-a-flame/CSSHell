@@ -8,7 +8,7 @@
 :root {
     --heading-font-family: Georgia, 'Times New Roman', Times, serif;
     --layout-max-width: 50rem;
-    
+    // light mode variables
     --brand-color: #c41d44;
     --link-hover-color: #b31a3e;
     --link-focus-color: #8b1631;
@@ -16,9 +16,13 @@
     --background-color: #f1f1f1;
     --font-color: #000;
     --heading-font-color: #444;
+    --site-header-logo-color: #000;
+    --post-meta-color: #666;
+    --post-tip-color: #f9f9f9;
 }
 
-.dark-mode {
+:root .dark-mode {
+    // dark mode variables
     --brand-color: #ff295b;
     --link-hover-color: #fa2758;
     --link-focus-color: #d1224b;
@@ -26,12 +30,14 @@
     --background-color: #333333;
     --heading-font-color: #bbb;
     --font-color: #fff;
+    --site-header-logo-color: #fff;
+    --post-meta-color: #888;
+    --post-tip-color: #060606;
 }
 
 body {
     color: var(--font-color);
     background-color: var(--background-color);
-    transition: all 300ms ease-in-out 0s;
     font-family: "Roboto", sans-serif;
     @media screen and (max-width: 840px) {
         padding: {

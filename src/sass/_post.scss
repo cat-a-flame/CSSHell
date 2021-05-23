@@ -1,5 +1,5 @@
 .post-meta {
-    color: #666;
+    color: var(--post-meta-color);
     font-size: .8rem;
     margin-bottom: 1.5rem;
     & a {
@@ -51,7 +51,7 @@
 }
 
 .post-tip {
-    background-color: #f9f9f9;
+    background-color: var(--post-tip-color);
     border: .125rem dashed var(--brand-color);
     padding: 1rem;
 }
