@@ -3,17 +3,19 @@
     --inline-code-background-color: #000;
     --inline-code-font-color: #fff;
     --code-color: #ea6155;
+    --meta-font-color: #666;
     
     @media (prefers-color-scheme: dark) {
         --code-block-background-color: #1b222c;
         --inline-code-background-color: #d8dfe8;
         --inline-code-font-color: #000;
         --code-color: #ff8e84;
+        --meta-font-color: #bbb;
     }
 }
 
 .post-meta {
-    color: #666;
+    color: var(--meta-font-color);
     font-size: .8rem;
     margin-bottom: 1.5rem;
     & a {
