@@ -11,7 +11,8 @@ module.exports = {
     pretty: value => {
         return beautify_html(value, {
             "indent_size": 2,
-            "inline": ""
+            "inline": "",
+            "wrap_line_length": "70"
         })
     },
     md: value => {
