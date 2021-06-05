@@ -6,15 +6,28 @@
 @import "prism";
 
 :root {
+    --background-color: #f1f1f1;
+    --primary-font-color: #111;
     --brand-color: #c41d44;
     --heading-font-family: Georgia, 'Times New Roman', Times, serif;
     --layout-max-width: 50rem;
     --link-hover-color: #b31a3e;
     --link-focus-color: #8b1631;
+    --logo-fill-color: #000;
+    
+    @media (prefers-color-scheme: dark) {
+        --background-color: #0d1117;
+        --primary-font-color: #fdfdfd;
+        --brand-color: #ff2659;
+        --link-hover-color: #d31a45;
+        --link-focus-color: #b80831;
+        --logo-fill-color: #f0f6fc;
+    }
 }
 
 body {
-    background-color: #f1f1f1;
+    background-color: var(--background-color);
+    color: var(--primary-font-color);
     font-family: "Roboto", sans-serif;
     @media screen and (max-width: 840px) {
         padding: {

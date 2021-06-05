@@ -9,6 +9,9 @@
 	@media print {
 		color: #666;
 	}
+	@media (prefers-color-scheme: dark) {
+		color: #e7ae70;
+	}
 }
 
 .token.punctuation {
@@ -26,6 +29,9 @@
 	@media print {
 		color: #666;
 	}
+	@media (prefers-color-scheme: dark) {
+		color: #0dcab1;
+	}
 }
 
 .token.function-name {
@@ -36,6 +42,12 @@
 .token.number,
 .token.function {
 	color: #f08d49;
+	@media print {
+		color: #000;
+	}
+	@media (prefers-color-scheme: dark) {
+		color: #ffab73;
+	}
 }
 
 .token.property,
@@ -45,6 +57,9 @@
 	color: #2d7192;
 	@media print {
 		color: #000;
+	}
+	@media (prefers-color-scheme: dark) {
+		color: #54c7ff;
 	}
 }
 
@@ -57,6 +72,9 @@
 	@media print {
 		color: #000;
 	}
+	@media (prefers-color-scheme: dark) {
+		color: #f085fa;
+	}
 }
 
 .token.string,
@@ -65,6 +83,12 @@
 .token.regex,
 .token.variable {
 	color: #b73484;
+	@media print {
+		color: #000;
+	}
+	@media (prefers-color-scheme: dark) {
+		color: #ff82cf;
+	}
 }
 
 .token.operator,

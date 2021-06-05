@@ -1,3 +1,15 @@
+:root {
+    --read-more-link-background: var(--brand-color);
+    --read-more-link-background-hover: var(--link-hover-color);
+    --read-more-link-background-focus: var(--link-focus-color);
+    
+    @media (prefers-color-scheme: dark) {
+        --read-more-link-background: #ac1a3c;
+        --read-more-link-background-hover: #990e2e;
+        --read-more-link-background-focus: #920a2a;
+    }
+}
+
 .post-list {
     list-style: none;
     margin: 0;
@@ -46,7 +58,7 @@
 
 .read-more {
     align-items: center;
-    background: var(--brand-color);
+    background: var(--read-more-link-background);
     color: #fff;
     display: inline-flex;
     font-weight: 500;
@@ -64,25 +76,25 @@
         margin-left: 1ch;
     }
     &:hover {
-        background-color: var(--link-hover-color);
+        background-color: var(--read-more-link-background-hover);
         color: #fff;
         text-decoration: none;
     }
     &:active {
-        background-color: var(--link-focus-color);
+        background-color: var(--read-more-link-background-focus);
         color: #fff;
         outline: 0 none;
         text-decoration: none;
     }
     &:focus {
-        background-color: var(--link-focus-color);
+        background-color: var(--read-more-link-background-focus);
         color: #fff;
         outline: 0 none;
         text-decoration: none;
     }
     &:focus-visible {
         color: #fff;
-        outline: 2px solid var(--link-focus-color);
+        outline: 2px solid var(--read-more-link-background-focus);
         text-decoration: none;
     }
 }

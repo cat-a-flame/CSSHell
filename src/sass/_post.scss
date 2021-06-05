@@ -1,3 +1,17 @@
+:root {
+    --code-block-background-color: #f9f9f9;
+    --inline-code-background-color: #000;
+    --inline-code-font-color: #fff;
+    --code-color: #ea6155;
+    
+    @media (prefers-color-scheme: dark) {
+        --code-block-background-color: #1b222c;
+        --inline-code-background-color: #d8dfe8;
+        --inline-code-font-color: #000;
+        --code-color: #ff8e84;
+    }
+}
+
 .post-meta {
     color: #666;
     font-size: .8rem;
@@ -58,7 +72,7 @@
 
 pre {
     &[class*="language-"] {
-        background-color: #f9f9f9;
+        background-color: var(--code-block-background-color);
         border: .0625rem dashed #000;
         overflow: auto;
         padding: 1rem;
@@ -96,14 +110,14 @@ pre {
 code {
     &[class*="language-"] {
         font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-        color: #ea6155;
+        color: var(--code-color);
         @media print {
             color: #000;
         }
     }
     &:not([class*="language-"]) {
-        background-color: #000;
-        color: #fff;
+        background-color: var(--inline-code-background-color);
+        color: var(--inline-code-font-color);
         display: inline-block;
         font-weight: 600;
         line-height: 1;

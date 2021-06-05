@@ -1,3 +1,11 @@
+:root {
+    --site-subtitle-font-color: #444;
+    
+    @media (prefers-color-scheme: dark) {
+        --site-subtitle-font-color: #c5c5c5;
+    }
+}
+
 .site-header {
     max-width: var(--layout-max-width);
     margin: {
@@ -102,7 +110,7 @@ footer {
         }
     }    
     &--details {
-        color: #444;
+        color: var(--site-subtitle-font-color);
         font: {
             family: var(--heading-font-family);
             size: 1.4rem;
