@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve",
-    "watch:sass": "node-sass --watch src/sass/main.scss _site/css/main.css --output-style compressed",
-    "start": "netlify dev"
+    "watch:sass": "node-sass --watch src/sass -o dist/css compressed",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "node-sass src/sass -o dist/css",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass --parallel build:*"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
   },
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }
