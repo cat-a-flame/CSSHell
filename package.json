@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass --watch src/sass -o src/css compressed",
+    "watch:sass": "node-sass --watch src/sass -o dist/css compressed",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "node-sass src/sass -o src/css",
+    "build:sass": "node-sass src/sass -o dist/css",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass --parallel build:*"
