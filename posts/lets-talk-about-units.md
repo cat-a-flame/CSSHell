@@ -5,7 +5,7 @@ date: 2021-05-08T16:00:00
 pageTitle: Let's talk about units
 lead: "There is a life beyond pixels and percentages. Using `px` units is fine in certain cases, the real mistake is using absolute instead of relative units."
 badcode: "p { font-size: 16px; line-height: 20px; margin-bottom: 8px; }"
-goodcode: "p { font-size: 1rem; line-height: 1.25; margin-bottom: 0.5em; }"
+goodcode: "p { font-size: 1rem; line-height: 1.25; margin-bottom: 0.5rem; }"
 ---
 
 <div class="article-section">
