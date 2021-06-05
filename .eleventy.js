@@ -1,19 +1,16 @@
+const filters = require('./_11ty/filters.js');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const filters = require('./_11ty/filters.js');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addWatchTarget('src/sass');
+  eleventyConfig.addPassthroughCopy('src/css');
 
   // Filters
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])
-  });
-
-  // sass config
-  eleventyConfig.setBrowserSyncConfig({
-    files: './_site/css/**/*.css'
   });
 
   // Plugins
