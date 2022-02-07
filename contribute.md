@@ -22,11 +22,10 @@ Did you encounter a hellish CSS code that's worth preserving for the eternity? G
 npm install
 ```
 
-2. Run the project (if you need styling, run the `watch:sass` command too. Later I'll merge these into one command).
+2. Run the project:
 
 ```html
 eleventy --serve
-npm run watch:sass
 ```
 
 

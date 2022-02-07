@@ -1,0 +1,136 @@
+:root {
+    --code-block-background-color: #f9f9f9;
+    --inline-code-background-color: #000;
+    --inline-code-font-color: #fff;
+    --code-color: #ea6155;
+    --meta-font-color: #666;
+}
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --code-block-background-color: #1b222c;
+            --inline-code-background-color: #d8dfe8;
+            --inline-code-font-color: #000;
+            --code-color: #ff8e84;
+            --meta-font-color: #bbb;
+        }
+    }
+
+.post-meta {
+    color: var(--meta-font-color);
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+}
+    @media print {
+        .post-meta a {::after {
+            content: " (" attr(href) ")";
+        }
+    }
+
+.article-section {
+    margin-bottom: 3rem;
+}
+    .article-section img {
+        max-width: 100%;
+    }
+
+.list-section ul {
+    margin: 0;
+}
+    .list-section ul li {
+        padding-left: .4rem;
+    }
+        .list-section ul li:not(:last-child) {
+            margin-bottom: .2rem;
+        }
+        .list-section ul li::marker {
+            content: url("/src/images/pentagram_icon.svg");
+        }
+
+.resources-section h2 {
+    margin-bottom: .5rem;
+}
+.resources-section ul {
+    margin-top: 0;
+}
+    .resources-section ul li:not(:last-child) {
+        margin-bottom: .2rem;
+    }
+}
+@media print {
+    .resources-section a::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+.post-tip {
+    background-color: #f9f9f9;
+    border: .125rem dashed var(--brand-color);
+    padding: 1rem;
+}
+
+pre[class*="language-"] {
+    background-color: var(--code-block-background-color);
+    border: .0625rem dashed #000;
+    overflow: auto;
+    padding: 1rem;
+    position: relative;
+}
+    @media print {
+        pre[class*="language-"] {
+           background-color: #fff;
+        }
+    }
+    pre[class*="language-"]::before {
+        background-color: #dfdddd;
+        color: #333;
+        font-family: "Roboto", sans-serif;
+        font-size: .6rem;
+        font-weight: 600;
+        position: absolute;
+        right: .5rem;
+        top: 0;
+        padding-top: .2rem;
+        padding-right: .5rem;
+        padding-bottom: .1rem;
+        padding-left: .5rem;
+    }
+    pre[class*="language-css"]::before {
+        content: "CSS";
+    }
+    pre[class*="language-html"]::before {
+        content: "HTML";
+    }
+
+code[class*="language-"] {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: var(--code-color);
+}
+    @media print {
+        code[class*="language-"] {
+            color: #000;
+        }
+    }
+
+code:not([class*="language-"]) {
+    background-color: var(--inline-code-background-color);
+    color: var(--inline-code-font-color);
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1;
+    padding-top: .2rem;
+    padding-right: .3rem;
+    padding-bottom: .1rem;
+    padding-left: .3rem;
+}
+
+kbd {
+    background-color: #555;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1;
+    padding-top: .2rem;
+    padding-right: .3rem;
+    padding-bottom: .1rem;
+    padding-left: .3rem;
+}
