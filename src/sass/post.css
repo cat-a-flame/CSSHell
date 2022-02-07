@@ -21,7 +21,7 @@
     margin-bottom: 1.5rem;
 }
     @media print {
-        .post-meta a {::after {
+        .post-meta a::after {
             content: " (" attr(href) ")";
         }
     }
@@ -55,7 +55,7 @@
     .resources-section ul li:not(:last-child) {
         margin-bottom: .2rem;
     }
-}
+
 @media print {
     .resources-section a::after {
         content: " (" attr(href) ")";
