@@ -1,0 +1,4 @@
+Sitemap: https://csshell.dev/sitemap.xml
+
+User-agent: *
+Disallow:
