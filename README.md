@@ -22,7 +22,7 @@ how **!important** a good CSS code is.
 
 ## Got an issue, an idea?
 
-Please report it on [GitHub](https://github.com/Stefanye/CSSHell)!
+Please report it on [GitHub](https://github.com/cat-a-flame/CSSHell)!
 
 
 ## Would you like to support my work?

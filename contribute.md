@@ -16,7 +16,7 @@ Did you encounter a hellish CSS code that's worth preserving for the eternity? G
 
 ## How to contribute
 
-1. [Fork the CSSHell repository](https://github.com/Stefanye/CSSHell) and install the dependencies.
+1. [Fork the CSSHell repository](https://github.com/cat-a-flame/CSSHell) and install the dependencies.
 
 ```html
 npm install
@@ -38,7 +38,7 @@ eleventy --serve
 
 4. Push and create a pull request to CSSHell's `main` branch.
 
-If you got any questions, or not sure if your example worth sharing, feel free to DM me on [Twitter](https://twitter.com/cat_a_flame), or post at [GitHub Discussions](https://github.com/Stefanye/CSSHell/discussions).
+If you got any questions, or not sure if your example worth sharing, feel free to DM me on [Twitter](https://twitter.com/cat_a_flame), or post at [GitHub Discussions](https://github.com/cat-a-flame/CSSHell/discussions).
 
 
 ## !important

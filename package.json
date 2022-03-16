@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Stefanye/CSSHell.git"
+    "url": "git+https://github.com/cat-a-flame/CSSHell.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Stefanye/CSSHell/issues"
+    "url": "https://github.com/cat-a-flame/CSSHell/issues"
   },
-  "homepage": "https://github.com/Stefanye/CSSHell#readme",
+  "homepage": "https://github.com/cat-a-flame/CSSHell#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
