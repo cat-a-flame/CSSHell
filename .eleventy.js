@@ -7,6 +7,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/js');
 
+  eleventyConfig.addPassthroughCopy({ 'src/ads.txt': '/ads.txt' });
+  eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
+
   // Filters
   Object.keys(filters).forEach(filterName => {
     eleventyConfig.addFilter(filterName, filters[filterName])
